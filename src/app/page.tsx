@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title className="min-h-screen bg-black text-white font-sans">BeatWave - Tu portal de eventos musicales</title>
+        <title className="min-h-screen bg-black text-white font-sans">Aeronotiqz - Your musical events portal</title>
         <meta name="description" content="Descubre los próximos conciertos, festivales y experiencias musicales en tu ciudad." />
       </Head>
       <div className="min-h-screen bg-black text-white font-sans">
@@ -13,7 +13,7 @@ export default function Home() {
         <section className="relative bg-[url('/concert-bg.jpg')] bg-cover bg-center h-[90vh] flex items-center justify-center text-center">
           <div className="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0 z-0" />
 
-          <title className="min-h-screen bg-black text-white font-sans">BeatWave - Tu portal de eventos musicales</title>
+          <title className="min-h-screen bg-black text-white font-sans">Aeronotiqz- Your musical events portal</title>
           <meta name="description" content="Descubre los próximos conciertos, festivales y experiencias musicales en tu ciudad." />
 
 
@@ -21,16 +21,16 @@ export default function Home() {
 
           <div className="z-10 max-w-2xl px-6">
             <h1 className="text-5xl font-extrabold mb-4 leading-tight">
-              Siente la música. Vive la experiencia.
+            Feel the music. Live the experience.
             </h1>
             <p className="text-lg mb-6 text-gray-300">
-              Explora conciertos, festivales y eventos exclusivos en tiempo real.
+            Explore exclusive concerts, festivals, and events in real time.
             </p>
             <a
               href="#eventos"
               className="inline-block bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded-full text-white font-medium text-lg"
             >
-              Ver eventos
+              View events
             </a>
           </div>
         </section>
@@ -48,8 +48,8 @@ export default function Home() {
                   height={300}
                   className="rounded-lg mb-4 object-cover h-48 w-full"
                 />
-                <h3 className="text-xl font-semibold mb-1">Nombre del evento {i + 1}</h3>
-                <p className="text-sm text-gray-400">Fecha y lugar</p>
+                <h3 className="text-xl font-semibold mb-1">Event name {i + 1}</h3>
+                <p className="text-sm text-gray-400">Date and place</p>
               </div>
             ))}
           </div>
@@ -57,7 +57,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="py-8 text-center text-gray-500 border-t border-gray-800">
-          © {new Date().getFullYear()} BeatWave. Todos los derechos reservados.
+          © {new Date().getFullYear()} Aeronotiqz. All rights reserved.
         </footer>
       </div>
     </>
