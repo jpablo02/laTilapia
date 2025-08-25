@@ -6,44 +6,44 @@ export default function Home() {
   const eventos = ["/t1.jpeg", "/t2.jpeg", "/t3.jpeg"];
 
   // Simulación del proceso del pescado
-  const proceso = [
-    {
-      step: "🐟 Siembra",
-      date: "01 Ene 2025",
-      hash: "0x9f8a7b3c1d...",
-    },
-    {
-      step: "🌱 Crecimiento",
-      date: "01 Feb 2025",
-      hash: "0x7e4c9d1a5b...",
-    },
-    {
-      step: "🎣 Cosecha",
-      date: "01 Mar 2025",
-      hash: "0xb2a93c8f0e...",
-    },
-    {
-      step: "🚚 Entrega",
-      date: "05 Mar 2025",
-      hash: "0x4c8f7d2a1e...",
-    },
-  ];
+  // const proceso = [
+  //   {
+  //     step: "🐟 Siembra",
+  //     date: "01 Ene 2025",
+  //     hash: "0x9f8a7b3c1d...",
+  //   },
+  //   {
+  //     step: "🌱 Crecimiento",
+  //     date: "01 Feb 2025",
+  //     hash: "0x7e4c9d1a5b...",
+  //   },
+  //   {
+  //     step: "🎣 Cosecha",
+  //     date: "01 Mar 2025",
+  //     hash: "0xb2a93c8f0e...",
+  //   },
+  //   {
+  //     step: "🚚 Entrega",
+  //     date: "05 Mar 2025",
+  //     hash: "0x4c8f7d2a1e...",
+  //   },
+  // ];
 
-  // Simulación de siembras registradas en blockchain
+  // Siembras registradas en blockchain (con links a Arbiscan)
   const siembras = [
     {
       id: 1,
-      fechaSiembra: "01 Feb 2025",
+      fechaSiembra: "01 Jul 2025",
       cantidad: 500,
-      fechaCosecha: "15 May 2025",
-      hash: "0xabc123...def",
+      fechaCosecha: "15 Ene 2026",
+      link: "https://sepolia.arbiscan.io/tx/0x998a2816b301bda9cf0470e3656eb5caeab0163bbe0d2897f8e698d14643def7#eventlog",
     },
     {
       id: 2,
-      fechaSiembra: "15 Mar 2025",
+      fechaSiembra: "01 Ago 2025",
       cantidad: 700,
-      fechaCosecha: "30 Jun 2025",
-      hash: "0xdef456...789",
+      fechaCosecha: "30 Feb 2026",
+      link: "https://sepolia.arbiscan.io/tx/0x5de276a5d5d00c2788e324026d3712a73d23b27e0907d1edecb4908a2fa8ce73#eventlog",
     },
   ];
 
@@ -82,7 +82,7 @@ export default function Home() {
           className="py-20 px-6 max-w-6xl mx-auto bg-[var(--primary)]"
         >
           <h2 className="text-3xl font-bold mb-10 text-center text-[var(--secondary)]">
-            Eventos destacados
+            Somos productores directos
           </h2>
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 ">
             {eventos.map((src, i) => (
@@ -103,7 +103,7 @@ export default function Home() {
         </section>
 
         {/* Proceso del pescado */}
-        <section
+        {/* <section
           id="proceso"
           className="py-20 px-6 max-w-4xl mx-auto bg-[var(--background)] rounded-2xl shadow-md"
         >
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Siembras en blockchain */}
         <section
@@ -151,14 +151,19 @@ export default function Home() {
                   <p>📅 Fecha de siembra: {s.fechaSiembra}</p>
                   <p>🐟 Cantidad de peces: {s.cantidad}</p>
                   <p>🌱 Fecha estimada de cosecha: {s.fechaCosecha}</p>
-                  <p className="text-xs font-mono text-[var(--foreground)] opacity-70 mt-2">
-                    Hash: {s.hash}
-                  </p>
+                  <a
+                    href={s.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline text-sm mt-2 inline-block"
+                  >
+                    🔗 Seguimiento de siembra
+                  </a>
                 </div>
 
                 {/* Botón WhatsApp */}
                 <a
-                  href={`https://wa.me/573001112233?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20tilapia%20de%20la%20siembra%20${encodeURIComponent(
+                  href={`https://wa.me/573225502972?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20tilapia%20de%20la%20siembra%20${encodeURIComponent(
                     s.fechaSiembra
                   )}`}
                   target="_blank"
