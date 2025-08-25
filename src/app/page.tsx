@@ -163,7 +163,7 @@ export default function Home() {
 
                 {/* Botón WhatsApp */}
                 <a
-                  href={`https://wa.me/573225502972?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20tilapia%20de%20la%20siembra%20${encodeURIComponent(
+                  href={`https://wa.me/573025502972?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20tilapia%20de%20la%20siembra%20${encodeURIComponent(
                     s.fechaSiembra
                   )}`}
                   target="_blank"
