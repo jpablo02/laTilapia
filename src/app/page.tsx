@@ -2,62 +2,179 @@ import Image from "next/image";
 import Head from "next/head";
 
 export default function Home() {
+  // Solo las imágenes
+  const eventos = ["/t1.jpeg", "/t2.jpeg", "/t3.jpeg"];
+
+  // Simulación del proceso del pescado
+  const proceso = [
+    {
+      step: "🐟 Siembra",
+      date: "01 Ene 2025",
+      hash: "0x9f8a7b3c1d...",
+    },
+    {
+      step: "🌱 Crecimiento",
+      date: "01 Feb 2025",
+      hash: "0x7e4c9d1a5b...",
+    },
+    {
+      step: "🎣 Cosecha",
+      date: "01 Mar 2025",
+      hash: "0xb2a93c8f0e...",
+    },
+    {
+      step: "🚚 Entrega",
+      date: "05 Mar 2025",
+      hash: "0x4c8f7d2a1e...",
+    },
+  ];
+
+  // Simulación de siembras registradas en blockchain
+  const siembras = [
+    {
+      id: 1,
+      fechaSiembra: "01 Feb 2025",
+      cantidad: 500,
+      fechaCosecha: "15 May 2025",
+      hash: "0xabc123...def",
+    },
+    {
+      id: 2,
+      fechaSiembra: "15 Mar 2025",
+      cantidad: 700,
+      fechaCosecha: "30 Jun 2025",
+      hash: "0xdef456...789",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title className="min-h-screen bg-black text-white font-sans">Aeronotiqz - Your musical events portal</title>
-        <meta name="description" content="Descubre los próximos conciertos, festivales y experiencias musicales en tu ciudad." />
+        <title>Tilapia fresca - Demo Blockchain</title>
+        <meta
+          name="description"
+          content="Tilapia roja fresca, directamente del estanque a tu mesa. Ahora con trazabilidad blockchain."
+        />
       </Head>
-      <div className="min-h-screen bg-black text-white font-sans">
+
+      <div className="min-h-screen bg-[var(--primary)] text-[var(--foreground)] font-sans">
         {/* Hero */}
-        <section className="relative bg-[url('/concert-bg.jpg')] bg-cover bg-center h-[90vh] flex items-center justify-center text-center">
-          <div className="bg-black bg-opacity-60 w-full h-full absolute top-0 left-0 z-0" />
+        <section className="relative h-[90vh] flex items-center justify-center text-center bg-[var(--primary)]">
+          <div className="bg-[var(--foreground)] bg-opacity-50 w-full h-full absolute top-0 left-0 z-0" />
 
-          <title className="min-h-screen bg-black text-white font-sans">Aeronotiqz- Your musical events portal</title>
-          <meta name="description" content="Descubre los próximos conciertos, festivales y experiencias musicales en tu ciudad." />
-
-
-
-
-          <div className="z-10 max-w-2xl px-6">
+          <div className="z-10 max-w-2xl px-6 bg-[var(--secondary)] rounded-2xl p-6 text-[var(--card)]">
             <h1 className="text-5xl font-extrabold mb-4 leading-tight">
-            Feel the music. Live the experience.
+              Tilapia roja 100 % fresca, del estanque a tu mesa.
             </h1>
-            <p className="text-lg mb-6 text-gray-300">
-            Explore exclusive concerts, festivals, and events in real time.
-            </p>
+
             <a
-              href="#eventos"
-              className="inline-block bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded-full text-white font-medium text-lg"
+              href="#siembras"
+              className="inline-block bg-[var(--foreground)] hover:opacity-80 transition px-6 py-3 rounded-full text-[var(--background)] font-medium text-lg"
             >
-              View events
+              Siembras Activas
             </a>
           </div>
         </section>
 
         {/* Eventos destacados */}
-        <section id="eventos" className="py-20 px-6 max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center">Eventos destacados</h2>
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-            {[1, 2, 3].map((event, i) => (
-              <div key={i} className="bg-[#1a1a1a] p-5 rounded-2xl hover:shadow-lg transition">
+        <section
+          id="eventos"
+          className="py-20 px-6 max-w-6xl mx-auto bg-[var(--primary)]"
+        >
+          <h2 className="text-3xl font-bold mb-10 text-center text-[var(--secondary)]">
+            Eventos destacados
+          </h2>
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 ">
+            {eventos.map((src, i) => (
+              <div
+                key={i}
+                className="overflow-hidden rounded-2xl hover:shadow-lg transition"
+              >
                 <Image
-                  src={`/event${i + 1}.jpg`}
+                  src={src}
                   alt={`Evento ${i + 1}`}
                   width={500}
                   height={300}
-                  className="rounded-lg mb-4 object-cover h-48 w-full"
+                  className="rounded-2xl object-contain w-full h-auto"
                 />
-                <h3 className="text-xl font-semibold mb-1">Event name {i + 1}</h3>
-                <p className="text-sm text-gray-400">Date and place</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Proceso del pescado */}
+        <section
+          id="proceso"
+          className="py-20 px-6 max-w-4xl mx-auto bg-[var(--background)] rounded-2xl shadow-md"
+        >
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            Proceso del pescado
+          </h2>
+
+          <div className="space-y-8">
+            {proceso.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start space-x-4 bg-[var(--card)] p-5 rounded-xl shadow-sm"
+              >
+                <div className="text-3xl">{item.step.split(" ")[0]}</div>
+                <div>
+                  <h3 className="text-xl font-semibold">{item.step}</h3>
+                  <p className="text-sm text-[var(--muted)]">{item.date}</p>
+                  <p className="text-xs font-mono text-[var(--foreground)] opacity-70">
+                    Hash: {item.hash}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Siembras en blockchain */}
+        <section
+          id="siembras"
+          className="py-20 px-6 max-w-5xl mx-auto bg-[var(--primary)]"
+        >
+          <h2 className="text-3xl font-bold mb-10 text-center text-[var(--secondary)]">
+            Siembras activas
+          </h2>
+          <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8">
+            {siembras.map((s) => (
+              <div
+                key={s.id}
+                className="bg-[var(--background)] rounded-2xl p-6 shadow-md border border-[var(--foreground)] flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Siembra #{s.id}
+                  </h3>
+                  <p>📅 Fecha de siembra: {s.fechaSiembra}</p>
+                  <p>🐟 Cantidad de peces: {s.cantidad}</p>
+                  <p>🌱 Fecha estimada de cosecha: {s.fechaCosecha}</p>
+                  <p className="text-xs font-mono text-[var(--foreground)] opacity-70 mt-2">
+                    Hash: {s.hash}
+                  </p>
+                </div>
+
+                {/* Botón WhatsApp */}
+                <a
+                  href={`https://wa.me/573001112233?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20tilapia%20de%20la%20siembra%20${encodeURIComponent(
+                    s.fechaSiembra
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-medium transition"
+                >
+                  Hacer pedido
+                </a>
               </div>
             ))}
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="py-8 text-center text-gray-500 border-t border-gray-800">
-          © {new Date().getFullYear()} Aeronotiqz. All rights reserved.
+        <footer className="py-8 text-center text-[var(--secondary)] border-t border-[var(--foreground)]">
+          © {new Date().getFullYear()} La tilapia. Derechos reservados.
         </footer>
       </div>
     </>
