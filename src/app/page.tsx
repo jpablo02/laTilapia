@@ -41,7 +41,7 @@ export default function Home() {
     {
       id: 2,
       fechaSiembra: "01 Ago 2025",
-      cantidad: 700,
+      cantidad: 600,
       fechaCosecha: "30 Feb 2026",
       link: "https://sepolia.arbiscan.io/tx/0x5de276a5d5d00c2788e324026d3712a73d23b27e0907d1edecb4908a2fa8ce73#eventlog",
     },
